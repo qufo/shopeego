@@ -432,6 +432,19 @@ type GetItemDetailResponseItemAttribute struct {
 	AttributeValue string `json:"attribute_value,omitempty"`
 }
 
+type GetItemDetailResponseItemAttribute2 struct {
+	// The Identify of each category
+	AttributeID int64 `json:"attribute_id,omitempty"`
+	// The name of each attribute
+	AttributeName int `json:"attribute_name,omitempty"`
+	// This is to indicate whether this attribute is mandantory
+	IsMandatory bool `json:"is_mandatory,omitempty"`
+	// Enumerated type that defines the type of the attribute. Applicable values: See Data Definition- AttributeType.
+	AttributeType string `json:"attribute_type,omitempty"`
+	// The value of this item attribute.
+	AttributeValue string `json:"attribute_value,omitempty"`
+}
+
 type GetItemDetailResponseItemLogistic struct {
 	// The identity of logistic channel
 	LogisticID int64 `json:"logistic_id,omitempty"`
@@ -494,7 +507,7 @@ type GetItemDetailResponseItem struct {
 	// The variation list of item
 	Variations []GetItemDetailResponseItemVariation `json:"variations,omitempty"`
 	//
-	Attributes []GetItemDetailResponseItemAttribute `json:"attributes,omitempty"`
+	Attributes []GetItemDetailResponseItemAttribute2 `json:"attributes,omitempty"`
 	// The logistics list.
 	Logistics []GetItemDetailResponseItemLogistic `json:"logistics,omitempty"`
 	// The wholesales tier list.
